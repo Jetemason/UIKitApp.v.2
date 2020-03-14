@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4sg-Cy-Xdy">
-                                <rect key="frame" x="20" y="84" width="374" height="161.5"/>
+                                <rect key="frame" x="20" y="84" width="374" height="561.5"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g7y-SY-hll">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
@@ -36,7 +36,48 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Zi-q0-vuQ">
                                         <rect key="frame" x="-2" y="131.5" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="ls3-q6-ltr"/>
+                                        </connections>
                                     </slider>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XkR-Ku-bUD">
+                                        <rect key="frame" x="0.0" y="201.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRS-FQ-WDU">
+                                        <rect key="frame" x="0.0" y="275.5" width="374" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.9435795428" green="1" blue="0.95611520309999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ba8-Lv-2K9"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="EKr-CZ-cMH">
+                                        <rect key="frame" x="0.0" y="345" width="374" height="216"/>
+                                        <connections>
+                                            <action selector="changeDate" destination="BYZ-38-t0r" eventType="valueChanged" id="Klo-Sg-Klx"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="7Pf-VI-LrA">
+                                <rect key="frame" x="16" y="771" width="382" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide all elements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd9-sE-Pj6">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="31"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hzK-OR-Bte">
+                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="hideAllElements" destination="BYZ-38-t0r" eventType="valueChanged" id="tYq-ly-a1n"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -44,13 +85,22 @@
                         <constraints>
                             <constraint firstItem="4sg-Cy-Xdy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6MZ-Iy-lkD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4sg-Cy-Xdy" secondAttribute="trailing" constant="20" id="NXl-0n-y8X"/>
+                            <constraint firstItem="7Pf-VI-LrA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TeG-fR-YxZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Pf-VI-LrA" secondAttribute="bottom" constant="60" id="fdO-Zb-fCi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Pf-VI-LrA" secondAttribute="trailing" constant="16" id="kLf-kh-2WA"/>
                             <constraint firstItem="4sg-Cy-Xdy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="odo-RB-b3c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="EKr-CZ-cMH" id="FSp-sF-C2l"/>
+                        <outlet property="hideSwitch" destination="hzK-OR-Bte" id="xYn-oj-uv1"/>
                         <outlet property="mainLabel" destination="lt7-tl-GOy" id="3pg-uN-Bzr"/>
+                        <outlet property="mainStackView" destination="4sg-Cy-Xdy" id="Rxb-pt-wzf"/>
                         <outlet property="segmentedControl" destination="g7y-SY-hll" id="y6T-hr-hEg"/>
+                        <outlet property="slider" destination="4Zi-q0-vuQ" id="ZJs-Hy-bPV"/>
+                        <outlet property="switchLabel" destination="vd9-sE-Pj6" id="x20-pd-GgP"/>
+                        <outlet property="userNameTextField" destination="XkR-Ku-bUD" id="BKV-Ww-wSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
